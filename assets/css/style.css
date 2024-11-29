@@ -147,7 +147,7 @@ p {
     overflow-y: auto;
     
 }
-.form-action-section {height: 40px;border-top: 0.5px solid #385a5f;}
+.form-action-section {height: 40px;border-top: 0.5px solid #385a5f;padding-top: 9px;}
 .btn {
     background: linear-gradient(180deg, rgba(18, 40, 55, 0) -175%, rgba(74, 240, 255, 0.5) 140%), #196264;
     /* box-shadow: 0px 1px 2px rgba(29, 255, 255, 0.55), 0px 0px 0px 3px rgba(28, 255, 255, 0.17); */
@@ -1106,11 +1106,11 @@ span.step-single:hover a {
 }
 
 .right-list-prev {
-    width: 280px;
+    width: 360px;
 }
 
 .left-list-prev {
-    width: calc(100% - 280px);
+    width: calc(100% - 360px);
 }
 
 .preview img {
@@ -1118,7 +1118,7 @@ span.step-single:hover a {
     width: 100%;
 }
 .prevlist-single {
-    flex: 1;
+  
     min-width: 180px;   
 }
 .prevlist {
@@ -1286,8 +1286,21 @@ textarea {
 }
 .remove-btn:hover svg {fill: #fff;}
 
+.onlydesktop{display: block;}
+.onlymobile{display: none;}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .aid-sidebar {display: none;}
+    .avatarslist {    height: 350px;}
+    .tons-single {width: 49%;}
+    .onlydesktop{display: none;}
+    .onlymobile{display: block;}
+}
+
 
 @media only screen and (max-width: 767px) {
+    .onlydesktop{display: none;}
+    .onlymobile{display: block;}
     .py-5 {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
@@ -1480,7 +1493,7 @@ textarea {
         height: 48px;
     }
 
-    .step-content .d-flex {
+    .step-content .d-flex:not(.avatar-content) {
         display: block !important;
     }
 
@@ -1505,6 +1518,7 @@ textarea {
 
     .avatar-single {
         margin-bottom: 10px;
+        width: 100%;
     }
 
     .step-content .d-flex.tons-single {
@@ -1531,5 +1545,19 @@ textarea {
 
     .prevlist-single {
         margin-bottom: 10px;
+    }
+    .step-content .d-flex.top-title-section {text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;}
+}
+
+@media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 700px) 
+                   and (orientation: landscape) {
+
+    .container, .container-sm{
+        max-width: 100% !important;
+        padding: 0px 3%;
     }
 }
